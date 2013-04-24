@@ -12,6 +12,7 @@ The latest apk can be found at the link I PM'd you.
 v0.31
 
 Fixed bug where you could only post in one topic<br/>
+Disabled links inside app to stop it breaking if you accidentally click a link<br/>
 Made topic control buttons larger<br/>
 Post datetime is actually real now as opposed to being xx/xx/xx<br/>
 Decreased tap response time so that tapping feels overall more responsive<br/>
