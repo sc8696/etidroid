@@ -15,6 +15,7 @@ Fixed bug where you could only post in one topic<br/>
 Made topic control buttons larger<br/>
 Post datetime is actually real now as opposed to being xx/xx/xx<br/>
 Decreased tap response time so that tapping feels overall more responsive<br/>
-Added version number to login page
+Added version number to login page<br/>
+Changed name of app to "mobilue" over "mobiLUE"
 
 
