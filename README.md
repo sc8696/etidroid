@@ -17,6 +17,7 @@ Added refresh button on topic list<br/>
 
 <b>[Enhancements]</b><br/>
 Changed page controls to change to icons on smaller screens<br/>
+Changed the "fetching" screen to be pure black rather than slightly transparent to improve UX (so loaded pages don't "pop" into view in the background)<br/>
 Cleaned up layout stylesheet for optimisation<br/>
 Removed a lot of unecessary page markup that was making use clunkier than it should've been<br/>
 
