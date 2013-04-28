@@ -16,8 +16,9 @@ Fixed unresponsive page controls<br/>
 Added refresh button on topic list<br/>
 
 <b>[Enhancements]</b><br/>
-Cleaned up layout stylesheet for optimisation<br/>
 Changed page controls to change to icons on smaller screens<br/>
+Cleaned up layout stylesheet for optimisation<br/>
+Removed a lot of unecessary page markup that was making use clunkier than it should've been<br/>
 
 <p>~~~</p>
 
