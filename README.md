@@ -10,6 +10,7 @@ The latest apk can be found at the link I PM'd you.
 
 <p>=====================================================</p>
 v0.32
+
 <b>[Fixes/patches]</b><br/>
 Fixed unresponsive page controls<br/>
 Added refresh button on topic list<br/>
