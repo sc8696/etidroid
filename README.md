@@ -17,7 +17,7 @@ Added refresh button on topic list<br/>
 <b>[Enhancements]</b><br/>
 Cleaned up layout stylesheet for optimisation<br/>
 
-~~~~~~~~~~~~~~~~~~~~
+
 
 v0.31
 
