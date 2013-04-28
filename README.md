@@ -17,6 +17,7 @@ Added refresh button on topic list<br/>
 
 <b>[Enhancements]</b><br/>
 Cleaned up layout stylesheet for optimisation<br/>
+Changed page controls to change to icons on smaller screens<br/>
 
 <p>~~~</p>
 
