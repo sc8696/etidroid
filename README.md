@@ -12,12 +12,12 @@ The latest apk can be found at the link I PM'd you.
 v0.4
 
 <b>[Fixes/patches]</b><br/>
-Made every font size relative to a base font which is dependant on your screen resolution.
+Made every font size relative to a base font which is dependant on your screen resolution.<br/>
 Optimised some of the style sheets
 
 <b>[Enhancements]</b><br/>
-Switched to the egg icon
-Made the page controls larger again
+Switched to the egg icon<br/>
+Made the page controls larger again<br/>
 
 <p>~~~</p>
 
