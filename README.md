@@ -9,6 +9,18 @@ The latest apk can be found at the link I PM'd you.
 
 
 <p>=====================================================</p>
+v0.4
+
+<b>[Fixes/patches]</b><br/>
+Made every font size relative to a base font which is dependant on your screen resolution.
+Optimised some of the style sheets
+
+<b>[Enhancements]</b><br/>
+Switched to the egg icon
+Made the page controls larger again
+
+<p>~~~</p>
+
 v0.32
 
 <b>[Fixes/patches]</b><br/>
