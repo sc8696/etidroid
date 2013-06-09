@@ -14,13 +14,15 @@ v0.6
 <b>[Fixes/patches]</b><br/>
 Complete overhaul of the architecture to Angular (this took so fucking long D:) <br/>
 Uses mobile website login mechanism so shouldn't log you out of the desktop site anymore<br/>
+Added ability to go to new posts by pressing the highlighted post counter on the topic list<br/>
 Added user filtering (swipe left on a post from the dots on the right)<br/>
 Fixed history not working<br/>
 More responsive feel<br/>
 Fixed post rendering (some posts usde to not display at all. They all should do now<br/>
 
 <b>[Enhancements]</b><br/>
-Changed loading icon
+Changed loading icon<br/>
+Slightly different highlight colour<br/>
 
 <p>~~~</p>
 
