@@ -9,6 +9,20 @@ The latest apk can be found at the link I PM'd you.
 
 
 <p>=====================================================</p>
+v0.6
+
+<b>[Fixes/patches]</b><br/>
+Complete overhaul of the architecture to Angular (this took so fucking long D:) <br/>
+Added user filtering (swipe left on a post from the dots on the right)<br/>
+Fixed history not working<br/>
+More responsive feel<br/>
+Fixed post rendering (some posts usde to not display at all. They all should do now<br/>
+
+<b>[Enhancements]</b><br/>
+Changed loading icon
+
+<p>~~~</p>
+
 v0.4
 
 <b>[Fixes/patches]</b><br/>
