@@ -3,9 +3,13 @@ mobilue
 
 ETI android app
 
-This is for bug tracking right now only
+If you want to build this yourself, shove it into a copy of Eclipse with all the Android tools installed (recommend downloading the
+Android SDK from Google). Plug your phone in, press Build/Play in Eclipse and choose your phone or an emulator
+from the device targetter. 
 
-The latest apk can be found at the link I PM'd you.
+All the main code is in assets/www
+
+It's written with AngularJS as the controller system, if you know that you're golden.
 
 
 <p>=====================================================</p>
