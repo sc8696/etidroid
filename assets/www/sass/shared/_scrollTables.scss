@@ -1,0 +1,103 @@
+
+$scrollTableHeaderHeight: 36px;
+$scrollTableColour:white;
+div.tableWrap{
+    position:relative;
+    height:400px; // simply default
+    width:100%;
+
+    &:after{
+
+    }
+    div.stickyHeader{
+        @include box-sizing('border-box');
+
+        padding-right: 16px;
+        overflow: hidden;
+        width:100%;
+        position:relative;
+        z-index:2;
+        height: $scrollTableHeaderHeight;
+
+
+
+
+        table{
+            margin-bottom:0px;
+            border-bottom:0px;
+
+           
+        }
+    }
+
+    div.scrollingTableWrap{
+        @include box-sizing('border-box');
+        position:absolute;
+        height:100%;
+        width:100%;
+        top:0px;
+        left:0px;
+        right:0px;
+        bottom:0px;
+        padding-top:$scrollTableHeaderHeight;
+        z-index:1;
+    }
+
+    div.scrollingTable{
+        overflow-y:scroll;
+        height:100%;
+
+        table{
+            width:100%;
+            padding-right:0px;
+            margin-bottom:0px;
+       }
+
+
+    }
+
+    // defaults
+    [class^=col]{
+        width:10%;
+    }
+
+
+    border: 0px none;
+
+    &.tableBordered{
+        div.stickyHeader{
+            @include border-radius($stdBorderRadius $stdBorderRadius 0px 0px);
+            border:1px solid $baseColourBorder;
+            table {
+                thead th{
+                    border:0px none;
+                    border-left:1px solid $baseColourBorder;
+                    &:first-child{
+                        border-left:0px none;
+                    }
+                }
+            }
+
+        }
+
+        div.scrollingTable{
+            @include border-radius(0px 0px $stdBorderRadius $stdBorderRadius);
+            border-bottom:1px solid $baseColourBorder;
+            table {
+                border: 0px none;
+                tbody tr:first-child td{
+                    &:first-child{
+                        @include border-top-left-radius(0px);
+                    }
+                    &:last-child{
+                        @include border-top-right-radius(0px);
+                    }
+                }
+            }
+            
+
+        }
+    }
+
+
+}

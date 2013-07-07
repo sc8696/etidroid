@@ -1,0 +1,37 @@
+.protMarking{
+    display:block;
+    height: $protMarkingHeight;
+    text-align: center;
+    font-weight: 800;
+    line-height: $protMarkingHeight;
+    width: 100%;
+    z-index: 10000;
+
+    &.stickyProtMarkingTop{
+        position:fixed;
+        top:0px;
+        left:0px;
+        right:0px;
+
+        + .mainContent{
+            padding-top:$protMarkingHeight + $standardGutter;
+        }
+
+    }
+
+    &.red{
+        color: white;
+        
+        background-color: #cc0000; // Old browsers
+        @include filter-gradient(#cc0000, #990000, vertical); // IE6-9
+        @include background-image(linear-gradient(top, #cc0000 0%,#990000 100%));
+
+    }
+} 
+
+footer.stickyFooter.protMarking{
+    padding:0px;
+    height:$protMarkingHeight;
+    top:auto;
+    bottom:0px; 
+}  

@@ -1,0 +1,482 @@
+/*======= START OF BUTTONS SECTION ==========*/
+$gradientBottom: $baseDark;
+
+.btn {
+    display: inline-block;
+    *display: inline;
+    /* IE7 inline-block hack */
+
+    *zoom: 1;
+    margin-bottom: 0;
+    font-size: 14px;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    color:colourContrastCheck($baseColour);
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+    background-color: $baseColour;
+    $hoverColour: darken($baseColour, $hoverOffset);
+
+    @include background-image(linear-gradient(top, rgba($baseColour,0) 0%, $gradientBottom 100%));
+    @include transition(background-color 0.1s linear);
+
+    background-repeat: repeat-x;
+
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+
+    border-style: solid;
+    border-color: $baseColourBorder;
+    border-bottom-style: solid;
+    border-bottom-color: darken($baseColourBorder, 5%);
+
+    @include border-radius($stdBorderRadius);
+    @include box-shadow(inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05));
+
+    @include box-sizing('border-box');
+    height: 26px;
+    line-height: 16px;
+    padding: 4px 12px;
+    border-width: 1px;
+
+    &:active, &.active{
+        background-color: $gradientBottom \9;
+        background-image: none;
+        outline: 0;
+
+        @include box-shadow(inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05))
+    }
+
+    &:hover{
+        color:colourContrastCheck($baseColour);
+        text-decoration: none;
+        background-color: $hoverColour;
+
+        @include transition(background-color 0.1s linear);
+    }
+
+    &[disabled], &.disabled{
+        cursor: default;
+        background-image: none;
+        opacity: 0.65;
+        filter: alpha(opacity=65);
+
+        @include box-shadow(none);
+    }
+
+    &.disabled,&[disabled]{
+        color:colourContrastCheck($baseColour);
+        background-color: darken($baseColour, $hoverOffset);
+    }
+
+    &:first-child{
+        *margin-left: 0;
+    }
+
+
+    .caret{
+        margin-top: 8px;
+        margin-left: 0px;
+    }
+
+
+    &.btnLarge {
+        padding: 11px 19px;
+        font-size: 17.5px;
+        height: 46px;
+        line-height:22px;
+
+        @include border-radius($stdBorderRadius);
+
+        .caret{
+            border-left-width: 5px;
+            border-right-width: 5px;
+            border-top-width: 5px;  
+        }
+    }
+
+    &.btnSmall { 
+        padding: 2px 10px;
+        font-size: 11.9px;
+        height:21px;
+        line-height:15px;
+        @include border-radius($stdBorderRadius);
+    }
+
+    &.btnMini {
+        padding: 0 6px;
+        font-size: 10.5px;
+        height:16px;
+        line-height:14px;
+        @include border-radius($stdBorderRadius);
+    }
+
+    &.btnLarge, &.btnSmall, &.btnMini{
+        .caret{
+            margin-top: 6px;
+        }
+    }
+
+    &.btnBlock {
+        display: block;
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+
+        @include box-sizing(border-box);
+
+        &+ .btnBlock{
+            margin-top: 5px;
+        }
+    }
+
+    
+
+}
+
+
+
+
+.close {
+  float: right;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 20px;
+  color: #000000;
+  text-shadow: 0 1px 0 #ffffff;
+  opacity: 0.2;
+  filter: alpha(opacity=20);
+}
+.close:hover {
+  color: #000000;
+  text-decoration: none;
+  cursor: pointer;
+  opacity: 0.4;
+  filter: alpha(opacity=40);
+}
+button.close {
+  padding: 0;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  -webkit-appearance: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+//Initial button has been setup
+//This is for additional colours and names for buttons
+@include buttonFactory(Primary, $primaryColour);
+//***************************************************//
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.btnGroup {
+    position: relative;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    font-size: 0;
+    vertical-align: middle;
+    white-space: nowrap;
+    *margin-left: .3em;
+
+
+    &:first-child{
+        *margin-left: 0;
+    }
+
+    &+.btnGroup{
+        margin-left: 5px;
+    }
+
+    &>.btn{
+        position: relative;
+        @include border-radius(0px);
+
+        &+.btn{
+            margin-left: -1px;
+        }
+
+
+        &:first-child, &.large:first-child{
+            margin-left: 0;
+            @include border-left-radius($stdBorderRadius);  
+        }
+
+        &:last-child, &.large:last-child, &.dropdownToggle, &.large.dropdownToggle{
+            @include border-right-radius($stdBorderRadius);
+        }
+
+        // &:hover, &:focus, &:active, &.active{
+        //     z-index:2;
+        // }
+
+
+        &+.dropdownToggle{
+            padding-left: 8px;
+            padding-right: 8px;
+
+            @include box-shadow(inset 1px 0 0 rgba(255,255,255,.125), inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05));
+            *padding-top: 5px;
+            *padding-bottom: 5px;   
+        }
+
+    }
+
+    &>.btn, &>.dropdownMenu, &>.popover{
+        font-size: 14px;
+    }
+
+    .btnMini{
+        font-size: 10.5px;
+
+        &+.dropdownToggle{
+            padding-left: 5px;
+            padding-right: 5px;
+            *padding-top: 2px;
+            *padding-bottom: 2px;
+        }
+
+    }
+    .btnSmall{
+        font-size: 11.9px;
+
+        &+.dropdownToggle{
+            *padding-top: 5px;
+            *padding-bottom: 4px;
+        }
+    }
+    .btnLarge{
+        font-size: 17.5px;
+
+        &+.dropdownToggle{
+            padding-left: 12px;
+            padding-right: 12px;
+            *padding-top: 7px;
+            *padding-bottom: 7px;
+        }
+    }
+
+
+    .dropdownToggle{
+        &:active{
+            outline: 0;
+        }
+    }
+
+    &.open{
+        .dropdownToggle{
+            background-image: none;
+            @include box-shadow(inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05));
+        }
+
+        .btn{
+            &.dropdownToggle{
+                background-color: $baseColour;
+            }
+            &.btnPrimary.dropdownToggle{
+                background-color: $primaryColour;
+            }
+        }
+    }
+
+
+
+}
+
+
+
+.dropup,
+.dropdown {
+    position: relative;
+}
+.dropdownToggle {
+    *margin-bottom: -3px;
+}
+.dropdownToggle:active,
+.open .dropdownToggle {
+    outline: 0;
+}
+.caret {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    vertical-align: top;
+    border-top: 4px solid #000000;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+    content: "";
+}
+.dropdown .caret {
+    margin-top: 8px;
+    margin-left: 2px;
+}
+.dropdownMenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 160px;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    list-style: none;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    *border-right-width: 2px;
+    *border-bottom-width: 2px;
+    @include border-radius($stdBorderRadius);
+    @include box-shadow(0 5px 10px rgba(0, 0, 0, 0.2));
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
+}
+.dropdownMenu.pullRight {
+    right: 0;
+    left: auto;
+}
+.dropdownMenu .divider {
+    *width: 100%;
+    height: 1px;
+    margin: 9px 1px;
+    *margin: -5px 0 5px;
+    overflow: hidden;
+    background-color: #e5e5e5;
+    border-bottom: 1px solid #ffffff;
+}
+.dropdownMenu li > a {
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: normal;
+    line-height: 20px;
+    color: #333333;
+    white-space: nowrap;
+}
+.dropdownMenu li > a:hover,
+.dropdownMenu li > a:focus,
+.dropdownSubmenu:hover > a {
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #0081c2;
+
+    @include background-image(linear-gradient(top, $primaryColour 0%, $primaryColour 100%));
+
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0);
+}
+.dropdownMenu .active > a,
+.dropdownMenu .active > a:hover {
+    color: #ffffff;
+    text-decoration: none;
+    outline: 0;
+    background-color: #0081c2;
+
+    @include background-image(linear-gradient(top, $primaryColour 0%, $primaryColour 100%));
+
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0);
+}
+.dropdownMenu .disabled > a,
+.dropdownMenu .disabled > a:hover {
+    color: #999999;
+}
+.dropdownMenu .disabled > a:hover {
+    text-decoration: none;
+    background-color: transparent;
+    background-image: none;
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+    cursor: default;
+}
+.open {
+    *z-index: 1000;
+}
+.open  > .dropdownMenu {
+    display: block;
+}
+.pullRight > .dropdownMenu {
+    right: 0;
+    left: auto;
+}
+.dropup .caret{
+    border-top: 0;
+    border-bottom: 4px solid #000000;
+    content: "";
+}
+.dropup .dropdownMenu {
+    top: auto;
+    bottom: 100%;
+    margin-bottom: 1px;
+}
+.dropdownSubmenu {
+    position: relative;
+}
+.dropdownSubmenu > .dropdownMenu {
+    top: 0;
+    left: 100%;
+    margin-top: -6px;
+    margin-left: -1px;
+
+    @include border-radius(0 $stdBorderRadius $stdBorderRadius $stdBorderRadius);
+}
+.dropdownSubmenu:hover > .dropdownMenu {
+    display: block;
+}
+.dropup .dropdownSubmenu > .dropdownMenu {
+    top: auto;
+    bottom: 0;
+    margin-top: 0;
+    margin-bottom: -2px;
+    @include border-radius($stdBorderRadius $stdBorderRadius $stdBorderRadius 0px);
+}
+.dropdownSubmenu > a:after {
+    display: block;
+    content: " ";
+    float: right;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 5px 0 5px 5px;
+    border-left-color: #cccccc;
+    margin-top: 5px;
+    margin-right: -10px;
+}
+.dropdownSubmenu:hover > a:after {
+    border-left-color: #ffffff;
+}
+.dropdownSubmenu.pullLeft {
+    float: none;
+}
+.dropdownSubmenu.pullLeft > .dropdownMenu {
+    left: -100%;
+    margin-left: 10px;
+    @include border-radius($stdBorderRadius 0px $stdBorderRadius $stdBorderRadius);
+}

@@ -1,0 +1,48 @@
+.custom-enter,
+.custom-leave,
+.custom-move {
+  -webkit-transition: 500ms ease-in all;
+  -moz-transition: 500ms ease-in all;
+  -o-transition: 500ms ease-in all;
+  transition: 500ms ease-in all;
+  // -webkit-transition-delay: 1000ms;
+  position: relative;
+}
+
+.custom-enter {
+  // @include scale(0.2);
+  // background-color: red;
+  opacity: 0;
+   // -webkit-transition-duration: 400ms;
+}
+.custom-enter.custom-enter-active {
+  // @include scale(1);
+  // background-color: yellow;
+  opacity: 1;
+}
+
+
+
+.custom-leave {
+  // @include scale(1);
+  // background-color: green;
+  opacity: 1;
+}
+.custom-leave.custom-leave-active {
+  // @include scale(0.2);
+  // background-color: blue;
+  opacity: 0;
+}
+
+
+
+.custom-move {
+  // @include scale(0);
+  // background-color: teal;
+  opacity: 0;
+}
+.custom-move.custom-move-active {
+  // @include scale(1);
+  // background-color: bisque;
+  opacity: 1;
+}

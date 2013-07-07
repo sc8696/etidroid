@@ -1,0 +1,105 @@
+
+// TABS AND PILLS
+// -------------
+
+// Common styles
+.navTabs,
+.navPills {
+	list-style:none;
+	margin-left:0px;
+	@include clearfix();
+	margin-bottom:0px;
+}
+.navTabs > li,
+.navPills > li {
+	float: left;
+}
+.navTabs > li > a, 
+.navPills > li > a { 
+	padding-right: 12px;
+	padding-left: 12px;
+	margin-right: 2px;
+	line-height: 14px; // keeps the overall height an even number
+	cursor:pointer;
+}
+
+// TABS
+// ----
+
+// Give the tabs something to sit on
+.navTabs {
+	border-bottom: 1px solid #ddd;
+	margin-bottom:0px;
+}
+// Make the list-items overlay the bottom border
+.navTabs > li {
+	margin-bottom: -1px;
+	margin-left:$standardGutter/2;
+	&:first-child{
+		margin-left:0px;
+	}
+}
+// Actual tabs (as links)
+.navTabs > li > a {
+	display:block;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	line-height: 20px;
+	border: 1px solid transparent;
+	border-bottom:1px solid $baseColourBorder;
+	@include border-radius($stdBorderRadius $stdBorderRadius 0 0);
+	background-color:$baseColour;
+	&:hover {
+		background-color:darken($baseColour, $hoverOffset);
+		text-decoration: none;
+		// border-color: $lightGray $lightGray #ddd;
+	}
+}
+// Active state, and it's :hover to override normal :hover
+.navTabs > .active > a,
+.navTabs > .active > a:hover {
+	background-color:white;
+	color: $textColourDark;
+	border: 1px solid #ddd;
+	border-bottom-color: transparent;
+	cursor: default;
+}
+
+
+
+// PILLS
+// -----
+
+// Links rendered as pills 
+.navPills > li > a {
+	padding-top: 8px;
+	padding-bottom: 8px;
+	@include border-radius($stdBorderRadius);
+	text-decoration:none;
+	background-color:$baseColour;
+	margin:0px; 
+
+	&:hover{
+		background-color:darken($baseColour, $hoverOffset);
+	}
+}
+.navPills > li {
+	line-height:32px;
+	margin-left:$standardGutter/2;
+
+	&:first-child{
+		margin-left:0px;
+	}
+
+}
+// Active state
+.navPills > .active > a,
+.navPills > .active > a:hover {
+	color: colourContrastCheck($primaryColour);
+	background-color: $primaryColour;
+}
+.navPills > .active > a:hover {
+	background-color: darken($primaryColour, 10%);
+}
+
+

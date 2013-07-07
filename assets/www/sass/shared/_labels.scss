@@ -1,0 +1,52 @@
+.label {
+    display: inline-block;
+    padding: 2px 4px;
+    font-size: 11.844px;
+    font-weight: bold;
+    line-height: 14px;
+    color: #ffffff;
+    vertical-align: baseline;
+    white-space: nowrap;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    background-color: #999999;
+    @include border-radius($stdBorderRadius);
+
+    &:empty{
+        display: none;
+    }
+}
+a.label:hover{
+    color: #ffffff;
+    text-decoration: none;
+    cursor: pointer;
+}
+.labelImportant{
+    background-color: #b94a48;
+}
+.labelImportant[href]{
+    background-color: #953b39;
+}
+.labelWarning{
+    background-color: #f89406;
+}
+.labelWarning[href]{
+    background-color: #c67605;
+}
+.labelSuccess{
+    background-color: #468847;
+}
+.labelSuccess[href] {
+    background-color: #356635;
+}
+.labelInfo {
+    background-color: #3a87ad;
+}
+.labelInfo[href] {
+    background-color: #2d6987;
+}
+.labelInverse{
+    background-color: #333333;
+}
+.labelInverse[href] {
+    background-color: #1a1a1a;
+}

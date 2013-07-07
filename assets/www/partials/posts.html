@@ -1,0 +1,47 @@
+<div id="postsView" class="posts list container body pushLeft">
+
+    <ul id="postList" class="currentTopicList">
+    	<li class="post" data-ng-repeat="post in posts" data-ng-class="{odd: $index%2===0}" id="{{post.id}}">
+    		<div class="postHeader">
+    			<p class="userName">{{post.username}}</p>
+    			<p class="date">{{post.date}}</p>
+    		</div>
+
+    		<div class="postBody" ng-bind-html-unsafe="post.content"></div>
+    		<div class="postActions row" ng-swipeleft="extended">
+    			<div class="dots two columns">
+    				<p>...</p>
+    			</div>
+                <div class="actions ten columns">
+                    <ul>
+                        <li>
+                            <a ng-click="filter('&u=' + post.userid)">Filter</a>
+                        </li>
+
+                    </ul>
+                </div>
+    		</div>
+    	</li>
+    </ul>
+
+    <div class="controlActions">
+    	
+        <a class="controlActionButton reply" data-ng-tap="reply()" data-ng-click="replyBoxToggle()"></a>
+    	<!-- ng repeat here or something -->
+        <a data-ng-repeat="control in controls" class="controlActionButton {{control.text}}" data-ng-tap="globals(control.link, 'posts')" data-ng-click="globals(control.link, 'posts')"></a>
+
+    </div>
+   
+    <div style="clear:both;"></div>
+
+</div>
+
+<div id="replyOverlay" class="overlay hidden">
+    <div class="container">
+        <textarea id="replyTextArea" class="replyTextArea"></textarea><br/>
+        <button id="cancelReplyButton" class="btn btnLarge cancelReplyButton" type="button" data-ng-click="replyBoxToggle()" data-ng-tap="replyBoxToggle()">cancel</button>
+        <button data-ng-click="reply()" data-ng-tap="reply()" id="replyButton" class="btn btnLarge replyButton" type="button">reply</button>
+    </div>
+</div>
+
+

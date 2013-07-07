@@ -1,0 +1,84 @@
+/*would be best to rip out twitter variables... and place in here really... can use the less one as a guide perhaps. can leave as stand alone though. and accept no changes will reach the twitter styles */
+
+/* Layout */
+
+$minPageWidth:420px;
+$maxPageWidth:1280px;
+
+$standardGutter:10px;
+$standardPadding:10px;
+
+$tabletBreak: 600px;
+$bigScreenBreak: 900px;
+
+
+/* the grid */
+
+// percentage gutter is worked out so that at min page width standard gutter = grid gutter
+$gridPercentageGutter: percentage( $standardGutter / $minPageWidth);
+$gridDefaultFloat: left;
+$gridColumns: 12;
+$gridDefaultRowSpacing:$standardGutter;
+$gridGutter: $standardGutter;
+
+/* prot marking */
+$protMarkingHeight: 26px;
+
+
+/* nav bar */
+$navGradientTop: darken(#2D2D2D,3%);
+$navGradientBottom: $navGradientTop;
+$navFallbackColor: $navGradientTop;
+$navHeight: 50px;
+$navTextColor:white;
+$navTextHoverColor: #111;
+$navTextShadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+
+$androidBlue: #0099cc;
+
+
+/* footer */
+$footerHeight: 100px;
+
+
+/*Colour Scheme*/
+$backgroundColour: #2d2d2d;
+$foregroundColour: white;
+$primaryColour:lighten($backgroundColour, 10%);
+$baseColour:$primaryColour;
+$baseColourBorder:darken($baseColour, 5%);
+
+$colourThreshold: #808080;
+$textColourLight: white;
+$textColourDark: #333;
+$linkColour:#55C2EE;
+$colourOffset: 10%;
+$hoverOffset: 10%;
+
+
+/*Default theming. DONT CHANGE*/
+$baseDark: darken($baseColour, $colourOffset);
+$stdBorderRadius: 4px;
+$bigBorderRadius: $stdBorderRadius * 3;
+$hoverOffset: $hoverOffset;
+
+/* typography */
+$baseFontSize:          14px;
+$baseFontFamily:        "Helvetica Neue", Helvetica, Arial, sans-serif;
+$baseLineHeight:        20px;
+$headingsFontFamily:    "robotocondensed", sans-serif; 
+$headingsColor:         $textColourDark; 
+
+/* animation time */
+$stdAnimationTime: 150ms;
+
+
+/* Fontello */
+$fontelloPath1: '/D:/Perforce/projects/Creative/sassBootstrapTemplate/assets/fonts/fontello/base';
+$fontelloPath2: 'D:/Perforce/projects/Creative/sassBootstrapTemplate/assets/fonts/fontello/base';
+        
+
+
+
+
+

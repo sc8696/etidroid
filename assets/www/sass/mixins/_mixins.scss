@@ -1,0 +1,54 @@
+@mixin clearfix() { *zoom:1;
+  &:before, &:after { content: " "; display: table; }
+  &:after { clear: both; }
+} 
+
+@function colourContrastCheck($colour){
+
+	$textColour: #000;
+
+	@if ($colour + $colourThreshold) == white {$textColour: $textColourDark;}
+	@else {$textColour:$textColourLight};
+
+	@return $textColour;
+}
+
+@mixin buttonFactory($name, $colour){
+
+	$gradientBottom: darken($colour, $colourOffset);
+
+	$hoverColour: darken($colour, $hoverOffset);
+
+	.btn#{$name} {
+
+	    color: colourContrastCheck($colour);
+	    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+	    background-color: $colour;
+
+	    @include background-image(linear-gradient(top, rgba($colour,0) 0%, $gradientBottom 60%));
+
+	    background-repeat: repeat-x;
+
+	    border-style: solid;
+	    border-color: darken($colour, 5%);
+	    border-bottom-style: solid;
+	    border-bottom-color: darken($colour, 10%);
+	    
+	    /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+	    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+
+	    &:hover,&:active,&.active,&.disabled,&[disabled] {
+	        color: colourContrastCheck($colour);
+	        background-color: $hoverColour;
+		}
+
+	    &:active,&.active {
+	        background-color: $hoverColour \9;
+	    }
+
+	    .caret{
+	        border-top-color: colourContrastCheck($colour);
+	        border-bottom-color: colourContrastCheck($colour);;
+	    }
+	}
+}

@@ -1,0 +1,101 @@
+.modalBackdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2000;
+  background-color: #000000;
+  &.fade {
+    opacity: 0;
+    &.in {
+      opacity: 0.8;
+      filter: alpha(opacity=80);
+    }
+  }
+}
+
+.modal {
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  z-index: 2001;
+  width: 560px;
+  margin-left: -280px;
+  background-color: #ffffff;
+  border: 1px solid #999;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  *border: 1px solid #999;
+  @include border-radius($stdBorderRadius);
+  @include box-shadow(0 3px 7px rgba(0, 0, 0, 0.3));
+  @include box-sizing("padding-box");
+  background-clip: padding-box;
+  outline: none;
+
+  &.fade {
+    -webkit-transition: opacity .3s linear, top .3s ease-out;
+    -moz-transition: opacity .3s linear, top .3s ease-out;
+    -o-transition: opacity .3s linear, top .3s ease-out;
+    transition: opacity .3s linear, top .3s ease-out;
+    top: -25%;
+
+    &.in {
+      top: 10%;
+    }
+  }
+
+}
+
+.modalHeader {
+  padding: 9px 15px;
+  border-bottom: 1px solid #eee;
+  .close {
+    margin-top: 2px;
+  }
+  h3 {
+    margin: 0;
+    line-height: 30px;
+  }
+}
+
+.modalBody {
+  position: relative;
+  overflow-y: auto;
+  max-height: 400px;
+  padding: 15px;
+}
+
+.modalForm {
+  margin-bottom: 0;
+}
+
+.modalFooter {
+  padding: 14px 15px 15px;
+  margin-bottom: 0;
+  text-align: right;
+  background-color: #f5f5f5;
+  border-top: 1px solid #ddd;
+
+  @include border-radius(0 0 $stdBorderRadius $stdBorderRadius);
+  @include box-shadow(inset 0 1px 0 #ffffff);
+  *zoom: 1;
+
+  @include clearfix();
+
+
+  .btn + .btn {
+    margin-left: 5px;
+    margin-bottom: 0;
+  }
+
+
+  .btnGroup .btn + .btn {
+    margin-left: -1px;
+  }
+
+  .btnBlock + .btn-block {
+    margin-left: 0;
+  }
+}
+
+

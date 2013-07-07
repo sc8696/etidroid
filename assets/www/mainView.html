@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+
+        <link rel="stylesheet" type="text/css" href="./css/general.css" />
+        <link rel="stylesheet" type="text/css" href="./css/mainView.css" />
+
+        <!-- Jquery include -->
+        <script type="text/javascript" src="js/zepto.js"/></script>
+        <script type="text/javascript" src="js/zepto/src/data.js"/></script>
+        <script type="text/javascript" src="js/zepto/src/touch.js"/></script>
+        <script type="text/javascript" src="js/zepto/src/fx_methods.js"/></script>
+
+        <!-- <script type="text/javascript" src="js/jquery.min.js"/></script> -->
+
+
+
+        <title>mobielue</title>
+    </head>
+
+    <body class="boardPage" data-ng-app="eti" >
+
+        <!-- <div class="wrapper" id="wrapper"> -->
+
+            <nav class="stickyNavTop container">
+                <div class="container"> 
+                    <img class="brandLogo" src="img/ETILogo.png"/>
+                    <h4 class="brand">mobilue</h4>
+                    <h5 id="upperCurrentTitle" class="brand upperCurrentTitle transparent"> / {{title}}</h5>
+                    <h5 id="username" class="username"></h5>
+                </div>
+                <div style="clear:both;"></div>
+            </nav>
+
+
+            <div id="main" class="mainContent">
+
+                <div id="leftPanel" class="panel">
+                    <div class="row">
+                        <div class="ten columns" id="panelList">
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container header pushLeft" id='titleHeader'>
+                    <h4 id="currentTitle">{{title}}</h4>
+                </div>
+                <div data-ng-view id="mainView" class="mainStuff"></div>
+
+
+                <div style="clear:both;"></div>
+
+                <div id="loadingOverlay" class="overlay"></div>
+
+            </div>
+            <div style="clear:both;"></div>
+        <!-- </div> -->
+
+        <script>
+             var browserTest = false;
+        </script>
+
+
+        <script type="text/javascript" charset="utf-8" src="helpers.js"></script>
+        <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/objects.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/parser.js"></script>
+
+        <script type="text/javascript" charset="utf-8" src="js/angular.min.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/directives.js"></script>   
+        <script type="text/javascript" charset="utf-8" src="js/routes.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/controllers.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/public.js"></script>
+
+        <script type="text/javascript" charset="utf-8" src="js/mainView.js"></script>
+    </body>
+</html>

@@ -1,0 +1,18 @@
+<div id="boardView" class="boards list container body pushLeft">
+
+    <ul class="currentTopicList" id="boardList">
+    	<li ng-repeat="board in boards" class="board" data-ng-class="{odd: $index%2===0}" >
+    		<a class="row" data-ng-tap="globals(board.href, 'topics')" data-ng-click="globals(board.href, 'topics')">
+    			<div class="nine columns boardName">
+    				<div class="boardInner">
+   						<span class="itemTitle">
+    						{{board.title}}
+    					</span> 					
+    				</div>
+    			</div>
+    		</a>
+    	</li>
+    </ul>
+
+    <div style="clear:both;"></div>
+</div>

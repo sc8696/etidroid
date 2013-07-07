@@ -1,0 +1,203 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:300,400);
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans);
+
+@font-face {
+    font-family: 'robotocondensed';
+    src: url('../fonts/roboto/roboto-condensed-webfont.eot');
+    src: url('../fonts/roboto/roboto-condensed-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/roboto/roboto-condensed-webfont.woff') format('woff'),
+         url('../fonts/roboto/roboto-condensed-webfont.ttf') format('truetype'),
+         url('../fonts/roboto/roboto-condensed-webfont.svg#robotocondensed') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Droid Sans';
+    src: url('../fonts/droidsans/droidsans-webfont.eot');
+    src: url('../fonts/droidsans/droidsans-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/droidsans/droidsans-webfont.woff') format('woff'),
+         url('../fonts/droidsans/droidsans-webfont.ttf') format('truetype'),
+         url('../fonts/droidsans/droidsans-webfont.svg#droid_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'robotoLight';
+    src: url('../fonts/robotoCondensed/robotocondensed-light-webfont.eot');
+    src: url('../fonts/robotoCondensed/robotocondensed-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/robotoCondensed/robotocondensed-light-webfont.woff') format('woff'),
+         url('../fonts/robotoCondensed/robotocondensed-light-webfont.ttf') format('truetype'),
+         url('../fonts/robotoCondensed/robotocondensed-light-webfont.svg#roboto_condensedlight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+// Typography
+// --------------------------------------------------
+
+
+// Body text
+// -------------------------
+
+body {
+  margin: 0;
+  font-family: "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  color: $textColourDark;
+}
+
+p {
+  margin: 0 0 $baseLineHeight / 2;
+}
+
+// Emphasis & misc
+// -------------------------
+
+// Ex: 14px base font * 85% = about 12px
+small   { font-size: 85%; }
+strong  { font-weight: bold; }
+em      { font-style: italic; }
+cite    { font-style: normal; }
+
+// Headings
+// -------------------------
+
+h1, h2, h3, h4, h5, h6 {
+  margin: ($baseLineHeight / 2) 0;
+  font-family: $headingsFontFamily;
+  font-weight: 200;
+  line-height: $baseLineHeight;
+  color: $headingsColor;
+  text-rendering: optimizelegibility; // Fix the character spacing for headings
+  small {
+    font-weight: normal;
+    line-height: 1;
+    color: $baseColour;
+  }
+}
+
+$baseFontSize: $baseFontSize * 1.5;
+
+h1,
+h2,
+h3 { line-height: $baseLineHeight * 2; }
+
+h1 { font-size: $baseFontSize * 2.75; } // ~38px
+h2 { font-size: $baseFontSize * 2.25; } // ~32px
+h3 { font-size: $baseFontSize * 1.75; } // ~24px
+h4 { font-size: $baseFontSize * 1.25; } // ~18px
+h5 { font-size: $baseFontSize; }
+h6 { font-size: $baseFontSize * 0.85; } // ~12px
+
+h1 small { font-size: $baseFontSize * 1.75; } // ~24px
+h2 small { font-size: $baseFontSize * 1.25; } // ~18px
+h3 small { font-size: $baseFontSize; }
+h4 small { font-size: $baseFontSize; }
+
+a {
+  color: $linkColour;
+  text-decoration: none;
+  cursor:pointer;
+  &:hover {
+    color: darken($linkColour,10%);
+    text-decoration: underline;
+  }
+}
+
+
+// Page header
+// -------------------------
+
+.pageHeader {
+  padding-bottom: ($baseLineHeight / 2) - 1;
+  margin: $baseLineHeight 0 ($baseLineHeight * 1.5);
+  border-bottom: 1px solid $baseColour;
+}
+
+
+
+// Lists
+// --------------------------------------------------
+
+// Unordered and Ordered lists
+ul, ol {
+  padding: 0;
+  margin: 0 0 $baseLineHeight / 2 0;
+  list-style: none;
+}
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+  margin-bottom: 0;
+}
+li {
+  line-height: $baseLineHeight;
+}
+
+
+// Single-line list items
+ul.inline,
+ol.inline {
+  margin-left: 0;
+  list-style: none;
+  > li {
+    display: inline-block;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
+
+// MISC
+// ----
+
+// Horizontal rules
+hr {
+  margin: $baseLineHeight 0;
+  border: 0;
+  border-top: 1px solid $baseColour;
+}
+
+// Abbreviations and acronyms
+abbr[title],
+// Added data-* attribute to help out our tooltip plugin, per https://github.com/twitter/bootstrap/issues/5257
+abbr[data-original-title] {
+  cursor: help;
+  border-bottom: 1px dotted $baseColour;
+}
+
+
+// Addresses
+address {
+  display: block;
+  margin-bottom: $baseLineHeight;
+  font-style: normal;
+  line-height: $baseLineHeight;
+}
+
+pre {
+  font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+  font-size: 12px;
+  color: $textColourDark;
+  display: block;
+  padding: 9.5px;
+  margin: 0 0 10px;
+  font-size: 13px;
+  line-height: 20px;
+  word-break: break-all;
+  word-wrap: break-word;
+  white-space: pre;
+  white-space: pre-wrap;
+  background-color: $baseColour;
+  border: 1px solid $baseColourBorder;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  @include border-radius($stdBorderRadius);
+}
+

@@ -1,0 +1,36 @@
+
+
+.clearfix {
+	@include clearfix();
+}
+
+
+.floatLeft{
+	float:left;
+}
+
+.floatRight{
+	float:right;
+}
+
+.hide {
+  display: none;
+}
+.show {
+  display: block;
+}
+.invisible {
+  visibility: hidden;
+}
+
+.oldIEGradient{
+	display:none;	
+}
+
+.screenReader {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}

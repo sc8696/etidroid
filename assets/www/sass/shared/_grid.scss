@@ -1,0 +1,130 @@
+/* The Grid ---------------------- */
+
+@function convert-number-to-word($num) {
+    $count:1;
+    @each $word in one,two,three,four,five,six,seven,eight,nine,ten,eleven,
+    twelve,thirteen,fourteen,fifteen,sixteen,seventeen,eighteen,nineteen,
+    twenty,twentyone,twentytwo,twentythree,twentyfour{
+        @if ($count == $num) { @return $word; }
+        $count: $count + 1;
+    }
+    @return "invalid";
+}
+@function convert-number-to-word-capitalised($num) {
+    $count:1;
+    @each $word in One,Two,Three,Four,Five,Six,Seven,Eight,Nine,Ten,Eleven,
+    Twelve,Thirteen,Fourteen,Fifteen,Sixteen,Seventeen,Eighteen,Nineteen,
+    Twenty,Twentyone,Twentytwo,Twentythree,Twentyfour{
+        @if ($count == $num) { @return $word; }
+        $count: $count + 1;
+    }
+    @return "invalid";
+}
+
+@function gridCalc($colNumber, $localVarGutter) {
+
+    $rowWidthMinusGutters: 100% - ($gridColumns - 1) * $localVarGutter;
+    $singleColumnWidth: $rowWidthMinusGutters / $gridColumns;
+
+    @return ($singleColumnWidth * $colNumber ) + ( $localVarGutter * ($colNumber - 1) );
+}
+
+@function staticGridCalc($colNumber) {
+    $rowWidthMinusGutters: $minPageWidth - ($gridColumns - 1) * $gridGutter;
+    $singleColumnWidth: ( $rowWidthMinusGutters - (2 * $gridGutter) ) / $gridColumns;
+
+    @return ( $colNumber * $singleColumnWidth ) + ( ($colNumber - 1) * $gridGutter );
+}
+
+
+
+
+.row { 
+    display:block;
+    width: 100%; 
+    margin-bottom:$gridDefaultRowSpacing;
+    @include clearfix();
+
+}
+.columns { 
+    float: $gridDefaultFloat;
+    min-height: 1px; 
+    position: relative;
+    margin-#{$gridDefaultFloat}:$gridPercentageGutter;
+
+    &:first-child{
+        margin-#{$gridDefaultFloat}:0px;
+    }
+}
+
+
+
+// Creating column classes
+// @for $i from 1 through $gridColumns {
+//     %#{convert-number-to-word($i)} { width: gridCalc($i, $gridPercentageGutter); }
+// }
+
+// // Creating .row-# classes
+// @for $i from 1 through $gridColumns {
+//     .row>.columns.#{convert-number-to-word($i)} { @extend %#{convert-number-to-word($i)}; }
+// }
+// // Creating .row .offset-by-# classes
+// @for $i from 1 through $gridColumns - 2 {
+//     .row>.columns.offsetBy#{convert-number-to-word-capitalised($i)} { margin-#{$gridDefaultFloat}: gridCalc($i, $gridPercentageGutter) + $gridPercentageGutter*2; &:first-child{ margin-#{$gridDefaultFloat}: gridCalc($i, $gridPercentageGutter) + $gridPercentageGutter; }}
+// }
+
+
+
+// Creating column classes
+@for $i from 1 through $gridColumns {
+    %#{convert-number-to-word($i)} { width: gridCalc($i, 0); }
+}
+
+// // Creating .row-# classes
+@for $i from 1 through $gridColumns {
+    .row>.columns.#{convert-number-to-word($i)} { @extend %#{convert-number-to-word($i)}; margin-#{$gridDefaultFloat}:0%;}
+}
+// // Creating .row .offset-by-# classes
+@for $i from 1 through $gridColumns - 2 {
+    .row>.columns.offsetBy#{convert-number-to-word($i)} { margin-#{$gridDefaultFloat}: gridCalc($i, 0);}
+}
+  
+
+// .row.static{
+//     min-width:$minPageWidth - (2 * $standardGutter);
+// }
+// .static.columns + .static.columns{
+//     margin-#{$gridDefaultFloat}:$standardGutter;
+// }
+
+// Creating column classes
+// @for $i from 1 through $gridColumns {
+//     %staticColumns#{convert-number-to-word($i)} { width: staticGridCalc($i); margin-#{$gridDefaultFloat}:0px; }
+// }
+
+// // Creating .row-# classes
+// @for $i from 1 through $gridColumns {
+//     .static.columns.#{convert-number-to-word($i)} { @extend %staticColumns#{convert-number-to-word($i)};}
+//     .row.static>.columns.#{convert-number-to-word($i)} { @extend %staticColumns#{convert-number-to-word($i)}; margin-#{$gridDefaultFloat}:$gridGutter; &:first-child{margin-#{$gridDefaultFloat}:0px;}}
+// } 
+
+// // // Creating .row .offset-by-# classes
+// @for $i from 1 through $gridColumns - 2 {
+//     .row.static>.offsetBy#{convert-number-to-word-capitalised($i)} { margin-#{$gridDefaultFloat}: staticGridCalc($i) + $gridGutter*2 !important; &:first-child{margin-#{$gridDefaultFloat}: staticGridCalc($i) + $gridGutter !important;}}
+// }
+
+
+.row{
+    > .floatLeft{
+        margin-left:$gridPercentageGutter;
+        &:first-child{
+            float-left:0px;
+        }
+    }
+    &.static > .floatLeft{
+        margin-left:$gridGutter;
+        &:first-child{
+            float-left:0px;
+        }
+    }
+}

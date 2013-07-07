@@ -1,0 +1,137 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: 'base';
+  src: url('#{$fontelloPath1}.eot');
+  src: url('#{$fontelloPath2}.eot?#iefix') format('embedded-opentype'), 
+        url('#{$fontelloPath1}.woff') format('woff'), 
+        url('#{$fontelloPath1}.ttf') format('truetype'), 
+        url('#{$fontelloPath1}.svg#base') format('svg');
+
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+[class^="icon"]:before,
+[class*=" icon"]:before {
+  font-family: 'base';
+  font-style: normal;
+  font-weight: normal; 
+  speak: none; 
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: 0.2em;
+  text-align: center;
+  opacity: 0.8;
+/* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+/* Animation center compensation - magrins should be symmetric */
+/* remove if not needed */
+  margin-left: 0.2em;
+/* you can be more comfortable with increased icons size */ 
+/* font-size: 120%; */
+/* Uncomment for 3D effect */
+/* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+.iconPlus:before { content: '\e825'; } /* '' */
+.iconMinus:before { content: '\e827'; } /* '' */
+.iconInfo:before { content: '\e8a1'; } /* '' */
+.iconLeft:before { content: '\e924'; } /* '' */
+.iconUp:before { content: '\e926'; } /* '' */
+.iconRight:before { content: '\e925'; } /* '' */
+.iconDown:before { content: '\e923'; } /* '' */
+.iconLevelUp:before { content: '\21b0'; } /* '↰' */
+.iconLevelDown:before { content: '\21b3'; } /* '↳' */
+.iconInfinity:before { content: '\221e'; } /* '∞' */
+.iconHome:before { content: '\e8fb'; } /* '' */
+.iconStar:before { content: '\e819'; } /* '' */
+.iconStarEmpty:before { content: '\e81a'; } /* '' */
+.iconCup:before { content: '\2615'; } /* '☕' */
+.iconMenu:before { content: '\2630'; } /* '☰' */
+.iconFlag:before { content: '\e837'; } /* '' */
+.iconTools:before { content: '\2692'; } /* '⚒' */
+.iconCog:before { content: '\2699'; } /* '⚙' */
+.iconScissors:before { content: '\2702'; } /* '✂' */
+.iconMail:before { content: '\e816'; } /* '' */
+.iconEdit:before { content: '\270d'; } /* '✍' */
+.iconOk:before { content: '\e822'; } /* '' */
+.iconCancel:before { content: '\e823'; } /* '' */
+.iconForward:before { content: '\e83e'; } /* '' */
+.iconCcw:before { content: '\27f2'; } /* '⟲' */
+.iconCw:before { content: '\27f3'; } /* '⟳' */
+.iconUserAdd:before { content: '\e700'; } /* '' */
+.iconStarHalf:before { content: '\e701'; } /* '' */
+.iconEye:before { content: '\e833'; } /* '' */
+.iconEyeClosed:before { content: '\e70b'; } /* '' */
+.iconPrint:before { content: '\e716'; } /* '' */
+.iconComment:before { content: '\e847'; } /* '' */
+.iconLocation:before { content: '\e910'; } /* '' */
+.iconMap:before { content: '\e727'; } /* '' */
+.iconTrash:before { content: '\e729'; } /* '' */
+.iconRss:before { content: '\e8bb'; } /* '' */
+.iconShare:before { content: '\e73c'; } /* '' */
+.iconResizeFull:before { content: '\e8c8'; } /* '' */
+.iconResizeSmall:before { content: '\e8c9'; } /* '' */
+.iconArrowCombo:before { content: '\e74f'; } /* '' */
+.iconZoomIn:before { content: '\e750'; } /* '' */
+.iconChartPie:before { content: '\e751'; } /* '' */
+.iconZoomOut:before { content: '\e85b'; } /* '' */
+.iconDatabase:before { content: '\e754'; } /* '' */
+.iconDownOpen:before { content: '\e75c'; } /* '' */
+.iconLeftOpen:before { content: '\e75d'; } /* '' */
+.iconRightOpen:before { content: '\e75e'; } /* '' */
+.iconUpOpen:before { content: '\e75f'; } /* '' */
+.iconFont:before { content: '\e779'; } /* '' */
+.iconBold:before { content: '\e77a'; } /* '' */
+.iconItalic:before { content: '\e77b'; } /* '' */
+.iconAlignLeft:before { content: '\e77e'; } /* '' */
+.iconAlignCenter:before { content: '\e77f'; } /* '' */
+.iconAlignRight:before { content: '\e780'; } /* '' */
+.iconAlignJustify:before { content: '\e781'; } /* '' */
+.iconIndentLeft:before { content: '\e783'; } /* '' */
+.iconIndentRight:before { content: '\e784'; } /* '' */
+.iconOff:before { content: '\e880'; } /* '' */
+.iconBookmarkEmpty:before { content: '\f097'; } /* '' */
+.iconFilter:before { content: '\f0b0'; } /* '' */
+.iconDocs:before { content: '\f0c5'; } /* '' */
+.iconListBullet:before { content: '\f0ca'; } /* '' */
+.iconListNumbered:before { content: '\f0cb'; } /* '' */
+.iconStrike:before { content: '\f0cc'; } /* '' */
+.iconUnderline:before { content: '\f0cd'; } /* '' */
+.iconMailAlt:before { content: '\f0e0'; } /* '' */
+.iconCommentEmpty:before { content: '\f0e5'; } /* '' */
+.iconSitemap:before { content: '\f0e8'; } /* '' */
+.iconPaste:before { content: '\f0ea'; } /* '' */
+.iconReply:before { content: '\f112'; } /* '' */
+.iconFolderEmpty:before { content: '\f114'; } /* '' */
+.iconFolderOpenEmpty:before { content: '\f115'; } /* '' */
+.iconTarget:before { content: '🎯'; } /* '\1f3af' */
+.iconThumbsUp:before { content: '\e83a'; } /* '' */
+.iconThumbsDown:before { content: '\e83b'; } /* '' */
+.iconUser:before { content: '👤'; } /* '\1f464' */
+.iconUsers:before { content: '👥'; } /* '\1f465' */
+.iconLamp:before { content: '💡'; } /* '\1f4a1' */
+.iconFloppy:before { content: '💾'; } /* '\1f4be' */
+.iconFolder:before { content: '\e84e'; } /* '' */
+.iconFolderOpen:before { content: '📂'; } /* '\1f4c2' */
+.iconDoc:before { content: '\e84d'; } /* '' */
+.iconCalendar1:before { content: '\e852'; } /* '' */
+.iconChartLine:before { content: '📈'; } /* '\1f4c8' */
+.iconChartBar:before { content: '📊'; } /* '\1f4ca' */
+.iconClipboard:before { content: '📋'; } /* '\1f4cb' */
+.iconPin:before { content: '📌'; } /* '\1f4cc' */
+.iconAttach:before { content: '\ea21'; } /* '' */
+.iconUpload:before { content: '\e83d'; } /* '' */
+.iconDownload:before { content: '\e83c'; } /* '' */
+.iconArrowsCcw:before { content: '🔄'; } /* '\1f504' */
+.iconSearch:before { content: '\e815'; } /* '' */
+.iconKey:before { content: '\e88c'; } /* '' */
+.iconLock:before { content: '\e82e'; } /* '' */
+.iconLockOpen:before { content: '\e82f'; } /* '' */
+.iconBookmark:before { content: '\e836'; } /* '' */
+.iconLink:before { content: '\ea20'; } /* '' */
+.iconClock:before { content: '🕔'; } /* '\1f554' */
+.iconBlock:before { content: '🚫'; } /* '\1f6ab' */

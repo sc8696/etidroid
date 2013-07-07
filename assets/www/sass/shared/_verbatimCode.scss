@@ -1,0 +1,113 @@
+
+@import "compass";
+
+code{
+	white-space: pre-wrap;
+}
+
+.codeExample{
+	margin-bottom: 20px;
+	margin-top: 20px;
+	// width:70%;
+	background-color: #272822;
+	@include border-radius($stdBorderRadius);
+	overflow: hidden;
+	opacity: 0.2;
+	// filter: alpha(opacity=20);
+
+	
+
+	$animationTime: 0.5s;
+
+	// @include transition(opacity $animationTime);
+
+	.heading{
+		@include border-radius($stdBorderRadius);
+		background-color: #171714;
+		color: white;
+		border-bottom: 0;
+		margin-bottom: 0;
+		padding: 5px 10px;
+		border-bottom: 1px solid #3c3d39;
+		font-family: "Lucida Console","consolas","monospace";
+		cursor: pointer;
+
+		&:before{
+			content: "+ ";
+		}
+	}
+
+	.codeBox{
+
+		color: white;
+		padding-left: 20px;
+		padding-right: 20px;
+		// @include transition(max-height $animationTime/2);
+
+
+		span{
+			&.red{
+				color: #f9276c;
+			}
+			&.blue{
+				color: blue;
+			}
+			&.green{
+				color: #87da2d;
+			}
+			&.purple{
+				color: #a881ff;
+			}
+			&.yellow{
+				color: #e6db6f;
+			}
+			&.grey{
+				color: #75715e;
+			}
+		}
+
+
+
+	}
+
+	&.shown{
+		
+		opacity: 1;
+		// filter: alpha(opacity=100);
+		// @include transition(opacity $animationTime);
+
+
+		.heading{
+			background-color: #171714;
+			&:before{
+				content: "- ";
+			}
+		}
+		.codeBox{
+			max-height: none;
+			// @include transition(max-height $animationTime);
+
+		}
+
+	}
+
+
+	&.documentation{
+		width: 70%;
+
+		@include border-radius(6px);
+
+		.heading{
+			@include border-radius(6px);
+		}
+
+	}
+}
+
+
+
+
+
+
+
+

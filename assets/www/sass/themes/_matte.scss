@@ -1,0 +1,25 @@
+$colourOffset: 0%;
+$hoverOffset: 8%;
+
+$baseLight: $baseColour;
+$baseDark: $baseColour;
+$primaryLight: $primaryColour;
+$primaryDark: $primaryColour;
+
+$baseHover: darken($baseColour, $colourOffset*1.2);
+
+button, .btn, .navTabs > li > a, .navPills > li > a{
+	@include transition(0.15s !important);
+
+	&:hover{
+		background-position: 0 -100px !important;
+	}
+	&:active{
+		@include box-shadow(0 2px 50px rgba(0, 0, 0, 0.14) inset, 0 0 1px rgba(0, 0, 0, 0.05) !important);
+	}
+	&.close{
+		&:active{
+			@include box-shadow(0px 0px 0px transparent !important);
+		}
+	}
+}

@@ -1,0 +1,97 @@
+
+//
+// Alerts
+// --------------------------------------------------
+
+
+
+$warningText: #c09853;
+$warningBackground: #fcf8e3;
+$warningBorder: darken($warningBackground, 10%);
+
+$errorText: #b94a48;
+$errorBackground: #f2dede;
+$errorBorder: darken($errorBackground, 10%);
+
+$successText: #468847;
+$successBackground: #dff0d8;
+$successBorder: darken($successBackground, 10%);
+
+$infoText: #3a87ad;
+$infoBackground: #d9edf7;
+$infoBorder: darken($infoBackground, 10%);
+
+
+// Base styles
+// -------------------------
+
+.alert {
+	padding: 8px 35px 8px 14px;
+	margin-bottom: $baseLineHeight;
+	text-shadow: 0 1px 0 rgba(255,255,255,.5);
+	background-color: $warningBackground;
+	border: 1px solid $warningBorder;
+	@include border-radius($stdBorderRadius);
+	color: $warningText;
+
+	h4{
+		color: $warningText;
+		margin: 0;
+	}
+	.close {
+		position: relative;
+		top: -2px;
+		right: -21px;
+		line-height: $baseLineHeight;
+	}
+
+}
+
+
+
+// Alternate styles
+// -------------------------
+
+.alertSuccess {
+	background-color: $successBackground;
+	border-color: $successBorder;
+	color: $successText;
+	h4 {
+		color: $successText;
+	}
+}
+.alertError {
+	background-color: $errorBackground;
+	border-color: $errorBorder;
+	color: $errorText;
+
+	h4{
+		color: $errorText;
+	}
+}
+
+.alertInfo {
+	background-color: $infoBackground;
+	border-color: $infoBorder;
+	color: $infoText;
+	h4 {
+		color: $infoText;
+	}
+}
+
+
+// Block alerts
+// -------------------------
+
+.alertBlock {
+	padding-top: 14px;
+	padding-bottom: 14px;
+
+	>p, >ul{
+		margin-bottom: 0;
+	}
+	p+p{
+		margin-top: 5px;
+	}
+}
+

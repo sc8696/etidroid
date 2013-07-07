@@ -1,0 +1,25 @@
+.breadcrumb {
+  padding: 8px 15px;
+  margin: 0 0 20px;
+  list-style: none;
+  background-color: #f5f5f5;
+  @include border-radius($stdBorderRadius);
+
+  > li {
+    display: inline-block;
+    *display: inline;
+    /* IE7 inline-block hack */
+
+    *zoom: 1;
+    text-shadow: 0 1px 0 #ffffff;
+
+    > .divider {
+      padding: 0 5px;
+      color: #ccc;
+    }
+
+  }
+  .active {
+    color: #999999;
+  }
+}

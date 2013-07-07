@@ -1,0 +1,207 @@
+/*would be best to rip out twitter variables... and place in here really... can use the less one as a guide perhaps. can leave as stand alone though. and accept no changes will reach the twitter styles */
+/* Layout */
+/* the grid */
+/* prot marking */
+/* nav bar */
+/* footer */
+/*Colour Scheme*/
+/*Default theming. DONT CHANGE*/
+/* typography */
+/* animation time */
+/* Fontello */
+@-webkit-keyframes blink {
+  /* line 4, ../sass/specific/_loginPage.scss */
+  from {
+    opacity: 0.2;
+  }
+
+  /* line 7, ../sass/specific/_loginPage.scss */
+  to {
+    opacity: 0.5;
+  }
+}
+
+/* line 14, ../sass/specific/_loginPage.scss */
+body.loginPage #main .container {
+  padding-right: 4%;
+  padding-top: 4%;
+  padding-left: 4%;
+}
+/* line 20, ../sass/specific/_loginPage.scss */
+body.loginPage #main .container .errorArea {
+  margin: 20px auto 0;
+  max-width: 530px;
+}
+/* line 22, ../sass/specific/_loginPage.scss */
+body.loginPage #main .container .errorArea .label {
+  opacity: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 25px;
+  line-height: 30px;
+}
+/* line 29, ../sass/specific/_loginPage.scss */
+body.loginPage #main .container .errorArea .label.visible {
+  -webkit-transition: all 300ms linear;
+  -moz-transition: all 300ms linear;
+  -o-transition: all 300ms linear;
+  transition: all 300ms linear;
+  opacity: 1;
+}
+/* line 39, ../sass/specific/_loginPage.scss */
+body.loginPage #main .container form.fullWidth {
+  margin: 0 auto;
+}
+/* line 42, ../sass/specific/_loginPage.scss */
+body.loginPage #main .container form.fullWidth input[type="text"], body.loginPage #main .container form.fullWidth input[type="password"] {
+  width: 100%;
+}
+/* line 49, ../sass/specific/_loginPage.scss */
+body.loginPage #main .container form.androidify select, body.loginPage #main .container form.androidify textarea, body.loginPage #main .container form.androidify input[type="text"], body.loginPage #main .container form.androidify input[type="password"], body.loginPage #main .container form.androidify input[type="datetime"], body.loginPage #main .container form.androidify input[type="datetime-local"], body.loginPage #main .container form.androidify input[type="date"], body.loginPage #main .container form.androidify input[type="month"], body.loginPage #main .container form.androidify input[type="time"], body.loginPage #main .container form.androidify input[type="week"], body.loginPage #main .container form.androidify input[type="number"], body.loginPage #main .container form.androidify input[type="email"], body.loginPage #main .container form.androidify input[type="url"], body.loginPage #main .container form.androidify input[type="search"], body.loginPage #main .container form.androidify input[type="tel"], body.loginPage #main .container form.androidify input[type="color"], body.loginPage #main .container form.androidify .uneditableInput {
+  margin-bottom: 20px;
+  outline: 0;
+  -webkit-box-shadow: 0 0 0 black;
+  -moz-box-shadow: 0 0 0 black;
+  box-shadow: 0 0 0 black;
+}
+/* line 54, ../sass/specific/_loginPage.scss */
+body.loginPage #main .container form.androidify #Benutzername, body.loginPage #main .container form.androidify #Passwort {
+  background-color: transparent;
+  border: 0px solid transparent;
+  color: white;
+  font-size: 60px;
+  height: 75px;
+  line-height: 75px;
+  border-bottom: 2px solid transparent;
+  -webkit-transition: all 0ms linear;
+  -moz-transition: all 0ms linear;
+  -o-transition: all 0ms linear;
+  transition: all 0ms linear;
+}
+/* line 64, ../sass/specific/_loginPage.scss */
+body.loginPage #main .container form.androidify #Benutzername:focus, body.loginPage #main .container form.androidify #Benutzername:active, body.loginPage #main .container form.androidify #Passwort:focus, body.loginPage #main .container form.androidify #Passwort:active {
+  border-bottom: 2px solid #0099cc;
+  -webkit-transition: all 0ms linear;
+  -moz-transition: all 0ms linear;
+  -o-transition: all 0ms linear;
+  transition: all 0ms linear;
+}
+/* line 69, ../sass/specific/_loginPage.scss */
+body.loginPage #main .container form.androidify #Benutzername.fieldErrorHighLight, body.loginPage #main .container form.androidify #Passwort.fieldErrorHighLight {
+  border-bottom: 2px solid #B94A48;
+  -webkit-transition: all 0ms linear;
+  -moz-transition: all 0ms linear;
+  -o-transition: all 0ms linear;
+  transition: all 0ms linear;
+}
+/* line 73, ../sass/specific/_loginPage.scss */
+body.loginPage #main .container form.androidify #Benutzername.fieldErrorHighLight:focus, body.loginPage #main .container form.androidify #Benutzername.fieldErrorHighLight:active, body.loginPage #main .container form.androidify #Passwort.fieldErrorHighLight:focus, body.loginPage #main .container form.androidify #Passwort.fieldErrorHighLight:active {
+  border-bottom: 2px solid #B94A48;
+  -webkit-transition: all 0ms linear;
+  -moz-transition: all 0ms linear;
+  -o-transition: all 0ms linear;
+  transition: all 0ms linear;
+}
+/* line 79, ../sass/specific/_loginPage.scss */
+body.loginPage #main .container form.androidify #login {
+  float: right;
+  font-size: 40px;
+  height: 70px;
+  background-color: #474747;
+  -webkit-tap-highlight-color: #606060;
+}
+/* line 93, ../sass/specific/_loginPage.scss */
+body.loginPage .loggingInOverlay {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  position: absolute;
+  top: 0;
+  z-index: 2000;
+  opacity: 0;
+  left: -9999px;
+  -webkit-transition: opacity 500ms ease-in;
+  -moz-transition: opacity 500ms ease-in;
+  -o-transition: opacity 500ms ease-in;
+  transition: opacity 500ms ease-in;
+}
+/* line 104, ../sass/specific/_loginPage.scss */
+body.loginPage .loggingInOverlay .loginTextWrapper {
+  height: 100%;
+  overflow: hidden;
+  position: static;
+  display: table;
+}
+/* line 110, ../sass/specific/_loginPage.scss */
+body.loginPage .loggingInOverlay .loginText, body.loginPage .loggingInOverlay .loginImage {
+  position: absolute;
+  top: 50%;
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%;
+  text-align: center;
+  font-size: 60px;
+  color: white;
+  opacity: 0.1;
+}
+/* line 121, ../sass/specific/_loginPage.scss */
+body.loginPage .loggingInOverlay .loginImage {
+  left: 50%;
+  margin-left: -150px;
+  margin-top: -130px;
+  text-align: center;
+  width: 300px;
+  opacity: 0.2;
+}
+/* line 130, ../sass/specific/_loginPage.scss */
+body.loginPage .loggingInOverlay .blink {
+  opacity: 0.6;
+  animation-name: blink;
+  animation-duration: 0.7s;
+  animation-timing-function: ease-in;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  -webkit-animation-name: blink;
+  -webkit-animation-duration: 0.7s;
+  -webkit-animation-timing-function: ease-in;
+  -webkit-animation-direction: alternate;
+  -webkit-animation-iteration-count: infinite;
+}
+/* line 142, ../sass/specific/_loginPage.scss */
+body.loginPage .loggingInOverlay .blink.delay {
+  animation-delay: 1s;
+  -webkit-animation-delay: 1s;
+}
+/* line 148, ../sass/specific/_loginPage.scss */
+body.loginPage .loggingInOverlay.reveal {
+  left: 0;
+  opacity: 0.9;
+  -webkit-transition: opacity 0.5s;
+  -moz-transition: opacity 0.5s;
+  -o-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+@media all and (max-width: 512px) {
+  /* line 160, ../sass/specific/_loginPage.scss */
+  body.loginPage #main .container form.androidify #Benutzername, body.loginPage #main .container form.androidify #Passwort {
+    font-size: 40px;
+    height: 60px;
+    line-height: 60px;
+    margin-bottom: 10px;
+  }
+  /* line 167, ../sass/specific/_loginPage.scss */
+  body.loginPage #main .container form.androidify #login {
+    font-size: 25px;
+    height: 50px;
+  }
+  /* line 178, ../sass/specific/_loginPage.scss */
+  body.loginPage .loggingInOverlay .loginText, body.loginPage .loggingInOverlay .loginImage {
+    font-size: 40px;
+  }
+  /* line 181, ../sass/specific/_loginPage.scss */
+  body.loginPage .loggingInOverlay .loginImage {
+    width: 200px;
+    margin-top: -90px;
+    margin-left: -100px;
+  }
+}

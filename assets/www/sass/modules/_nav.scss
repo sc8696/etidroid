@@ -1,0 +1,260 @@
+/* main nav bar */
+nav{
+	display:block;
+	min-height: $navHeight;
+	background-color: $navFallbackColor;
+  	background-color: rgba($navFallbackColor,0.9);
+    @include background-image(linear-gradient(top, rgba($navGradientTop,0.05) 0%, rgba($navGradientBottom,0.05) 100%));
+	border-top:0px;
+	@include box-shadow(0px 1px 4px rgba(0,0,0,0.065));
+	position:relative;
+
+	&.stickyNavBottom, &.stickyNavTop{
+		position: fixed;
+ 		z-index: 1030;
+		left:0px;
+		right:0px;
+	}
+
+	&.stickyNavTop{
+		top: 0;
+		@include box-shadow(0 1px 10px rgba(0,0,0,.1));
+
+		+ .mainContent{
+	    	padding-top:$navHeight;
+	    }
+	}
+
+	&.stickyNavBottom{
+		bottom:0;
+		@include box-shadow(0 -1px 10px rgba(0,0,0,.1));
+	}
+
+
+	>div.container{
+
+		*{
+			opacity: 1;
+		}
+
+		a.brand{
+			float: left;
+			display: block;
+			font-size: 20px;
+			font-weight: 200;
+			color: $navTextColor;
+			text-shadow: $navTextShadow;
+
+			&:hover{
+				text-decoration: none;
+				color:$navTextHoverColor;
+			}
+		}
+
+		h1,h2,h3,h4,h5{
+			margin: 0;
+			&.brand{
+				float: left;
+				display: block;
+				font-weight: 200;
+				color: $navTextColor;
+				text-shadow: $navTextShadow;
+			}
+		}
+		.brandLogo{
+			float: left;
+			display: block;
+			// padding: $standardPadding 20px $standardPadding 0px;
+			font-weight: 200;
+			color: $navTextColor;
+			text-shadow: $navTextShadow;
+		}
+
+		ul.nav{
+	  		margin-bottom: 20px;
+	  		list-style: none;
+			position: relative;
+			left: 0;
+			display: block;
+			float: left;
+			margin: 0 $standardGutter 0 0;
+
+			> li{
+				float: left;
+				position:relative;
+
+				a{
+	 				display: block;
+					float: none;
+					padding: $standardPadding 15px $standardPadding;
+					text-decoration: none;
+					color: $navTextColor;
+					text-shadow: $navTextShadow;
+
+					&:hover, &:focus{
+						text-decoration: none;
+						background-color: transparent;
+						color: $navTextHoverColor;
+					}
+				}
+
+				&.active{
+					> a, a:hover, a:focus{
+						text-decoration: none;
+						@include box-shadow(0 3px 8px rgba(0, 0, 0, 0.125) inset);
+						color: $navTextHoverColor;
+						background-color: $navGradientBottom;
+					}
+				}
+				&.disabled{
+					> a{
+						color: $navTextColor;
+						
+						&:hover{
+						  	text-decoration: none;
+						  	background-color: transparent;
+						  	cursor: default;
+						}
+					}
+				}
+
+				&.dropdown{
+					position:relative;
+
+					>a{
+						padding-right:21px;
+
+						&.navHome{
+							display:none;
+						}
+
+						&:after{
+							content:"";
+							border: 5px solid;
+							border-color: $navTextColor transparent transparent;
+							position:relative;
+							top:11px;
+							left:8px;
+						}
+
+						&:hover:after{
+							border-top-color:$navTextHoverColor;
+						}
+					}
+
+					>ul{
+						display:none;
+						overflow:hidden;
+						position:absolute;
+						background-color:rgba($navFallbackColor,0.95);
+						background-color:rgba($navFallbackColor,1)\0;
+						margin-left:0px;
+						min-width:100%;
+						@include box-shadow(0 17px 24px -15px black inset, 0 4px 5px -1px #777);
+
+						>li{
+	  						list-style: none;
+						}
+					}
+
+					&:target{
+						>a{
+							display:none;
+							&.navHome{
+								display:block;
+							}
+						}
+						>ul{
+							display:block;
+						}	
+					}
+					&.open{
+						>a{
+							display:none;
+							&.navHome{
+								display:block;
+							}
+						}
+						>ul{
+							display:block;
+						}	
+					}
+				}
+			}
+		}
+	
+ 
+		.divider{
+			height: $navHeight;
+			margin: 0 9px;
+			border-left: 1px solid $navGradientBottom;
+			border-right: 1px solid $navGradientTop;
+			float:left;
+	  	}
+
+		.btn, .btnGroup{
+			margin-top: 7px;
+			margin-right:$standardGutter;
+			line-height:16px;
+			position:relative;
+		}
+		.btnGroup>.btn{
+			margin-right:0px;
+			margin-top:0px;  
+		}
+
+		input.search{
+			position: relative;
+			float: left;
+			height:16px;
+			margin-top: 7px;
+			margin-bottom: 0;
+			margin-right:$standardGutter;
+			padding-top: 4px;
+			padding-bottom: 4px;
+			font-size: 13px;
+			font-weight: normal;
+			line-height: 1;
+
+			&.rounded{
+				@include border-radius($bigBorderRadius);
+				padding-left:14px;
+				padding-right:14px;
+			}
+		}
+	}
+}
+
+html.lt-ie9{
+	nav > .oldIEGradient{
+    	display:block;
+    	position:absolute;
+    	width:100%;
+    	height:100%;
+		top: 0;
+		left: 0;
+    	@include filter-gradient($navGradientTop, $navGradientBottom, vertical); // IE6-9
+	}
+}
+
+.stickyProtMarkingTop + nav{
+	>div.container{
+    	margin-top:$protMarkingHeight;
+
+	    ul.nav{
+	    	margin-top:0px - $protMarkingHeight;
+	    	> li {
+				padding-top:$protMarkingHeight;
+	    	} 
+	    }
+	}
+    &.stickyNavTop{
+    	*top:$protMarkingHeight;
+    	+ .mainContent{
+	    	padding-top: $navHeight;
+	    }
+    }
+}
+
+/* End of main page navigation */
+

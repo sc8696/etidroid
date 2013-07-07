@@ -1,0 +1,190 @@
+@import "compass";
+
+@-webkit-keyframes blink{
+	from{
+		opacity: 0.2;
+	}
+	to{
+		opacity: 0.5;
+	}
+}
+
+body.loginPage{
+	#main{
+		.container{
+
+			padding-right: 4%;
+			padding-top: 4%;
+			padding-left: 4%;
+			
+			.errorArea{
+
+				.label{
+					opacity: 0;
+					width: 100%;
+					text-align: center;
+					font-size: 25px;
+					line-height: 30px;
+
+					&.visible{
+						@include transition(all 300ms linear);
+						opacity: 1;
+					}
+				}
+				margin: 20px auto 0;
+		    	max-width: 530px;
+			}
+
+			form{
+				&.fullWidth{
+					margin: 0 auto;
+
+					input[type="text"], input[type="password"]{
+						width: 100%;
+					}
+				}
+
+				&.androidify{
+
+					select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditableInput {
+						margin-bottom: 20px;
+						outline: 0;
+						@include box-shadow(0 0 0 black);
+					}
+					#Benutzername, #Passwort{
+						background-color: transparent;
+						border: 0px solid transparent;
+						color: white;
+						font-size: 60px;
+						height: 75px;
+						line-height: 75px;
+						border-bottom: 2px solid transparent;
+						@include transition(all 0ms linear);
+
+						&:focus, &:active{
+							border-bottom: 2px solid $androidBlue;
+							@include transition(all 0ms linear);
+						}
+
+						&.fieldErrorHighLight{
+							border-bottom: 2px solid #B94A48;
+							@include transition(all 0ms linear);
+
+							&:focus, &:active{
+								border-bottom: 2px solid #B94A48;
+								@include transition(all 0ms linear);
+							}
+						}
+					}
+					#login{
+						float: right;
+					    font-size: 40px;
+					    height: 70px;
+						background-color: lighten($backgroundColour, 10%);
+						-webkit-tap-highlight-color: lighten($backgroundColour, 20%);	
+					}
+					
+				}
+			}
+		}
+		
+	}
+
+	.loggingInOverlay{
+		width: 100%;
+		height: 100%;
+		background-color: black;
+		position: absolute;
+		top: 0;
+		z-index: 2000;
+		opacity: 0;
+		left: -9999px;
+		@include transition(opacity 500ms ease-in);
+
+		.loginTextWrapper{
+			height: 100%; 
+			overflow: hidden; 
+			position: static;
+			display: table;
+		}
+		.loginText{
+			position: absolute; top: 50%;
+			display: table-cell; 
+			vertical-align: middle; 
+			width: 100%;
+			text-align: center;
+			font-size: 60px;
+			color: white;
+			opacity: 0.1;
+		}
+
+		.loginImage{
+			@extend .loginText;
+			left: 50%;
+		    margin-left: -150px;
+		    margin-top: -130px;
+		    text-align: center;
+		    width: 300px;
+		    opacity: 0.2;
+		}
+		.blink{
+			opacity: 0.6;
+			animation-name: blink;
+			animation-duration: 0.7s;
+			animation-timing-function: ease-in;
+			animation-direction: alternate;
+			animation-iteration-count: infinite;
+			-webkit-animation-name: blink;
+			-webkit-animation-duration: 0.7s;
+			-webkit-animation-timing-function: ease-in;
+			-webkit-animation-direction: alternate;
+			-webkit-animation-iteration-count: infinite;
+			&.delay{
+				animation-delay: 1s;
+				-webkit-animation-delay: 1s;
+			}
+		}
+
+		&.reveal{
+			left: 0;
+			opacity: 0.9;
+			@include transition(opacity 0.5s);
+		}
+	}
+
+	@media all and (max-width: 512px) {
+		#main{
+			.container{
+				form{
+					&.androidify{
+						#Benutzername, #Passwort{
+							font-size: 40px;
+							height: 60px;
+							line-height: 60px;
+							margin-bottom: 10px;
+						}
+
+						#login{
+							font-size: 25px;
+							height: 50px;
+						}
+					}
+				}
+			}
+			
+		}
+
+		.loggingInOverlay{
+			.loginText{
+				font-size: 40px;		
+			}
+			.loginImage{
+				width: 200px;
+				margin-top: -90px;
+				margin-left: -100px;
+			}
+		}
+	}
+}
+
+	

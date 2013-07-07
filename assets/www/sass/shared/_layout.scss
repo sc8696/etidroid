@@ -1,0 +1,48 @@
+
+/** main content wrapper class - allowing full width content, placed below a navbar if necessary + below prot marking in the prot marking add on **/
+
+body{
+	min-width:$minPageWidth;
+	// height: 100%;
+}
+html{
+	// height: 100%;
+}
+
+.mainContent{
+	width:100%;
+	display:block;
+	padding-top:$standardGutter;
+	padding-bottom:$standardGutter;
+}
+
+.container{
+	min-width:$minPageWidth;
+	max-width:$maxPageWidth;
+	@include box-sizing(border-box);
+	padding-left:$standardGutter;
+	padding-right:$standardGutter;	
+
+	margin-right: auto;
+	margin-left: auto;
+	*zoom: 1;
+
+	
+	@include clearfix();
+	
+}
+
+body.fixWidthMin .container{ 
+	min-width:auto;
+	width:$minPageWidth;
+}
+body.fixWidthMax .container{
+	max-width:auto;
+	width:$maxPageWidth;
+}
+
+section{
+	margin:$standardGutter 0px;
+}
+
+

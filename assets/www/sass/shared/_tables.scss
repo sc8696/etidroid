@@ -1,0 +1,152 @@
+table {
+    max-width: 100%;
+    background-color: transparent;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+.table {
+    width: 100%;
+    margin-bottom: 20px;
+
+    th, td{
+        padding: 8px;
+        line-height: 20px;
+        text-align: left;
+        vertical-align: top;
+        border-top: 1px solid $baseColourBorder;
+    }
+    th{
+        font-weight: bold;
+
+    }
+
+    thead th{
+        vertical-align: bottom;
+    }
+   
+    tbody + tbody{
+        border-top: 2px solid $baseColourBorder;
+    }
+
+    .table {
+        background-color: #ffffff;
+    }
+}
+
+.table caption + thead tr:first-child th,
+.table caption + thead tr:first-child td,
+.table colgroup + thead tr:first-child th,
+.table colgroup + thead tr:first-child td,
+.table thead:first-child tr:first-child th,
+.table thead:first-child tr:first-child td {
+    border-top: 0;
+}
+
+
+.tableBordered {
+    border: 1px solid $baseColourBorder;
+    border-collapse: separate;
+    *border-collapse: collapse;
+    border-left: 0;
+    @include border-radius($stdBorderRadius);
+
+    th, td{
+        border-left: 1px solid $baseColourBorder;
+    }
+
+    thead{
+        &:first-child tr:first-child{
+            > th{
+                &:first-child{
+                    @include border-top-left-radius($stdBorderRadius);
+                }
+                &:last-child{
+                    @include border-top-right-radius($stdBorderRadius);
+                }
+            }
+        }
+        &:last-child tr:last-child{
+            th:first-child{
+                @include border-bottom-left-radius($stdBorderRadius);
+            }
+        }   
+
+    }
+    tbody{
+        &:first-child tr:first-child{
+            > td{
+                &:first-child{
+                    @include border-top-left-radius($stdBorderRadius);
+                }
+                &:last-child{
+                    @include border-top-right-radius($stdBorderRadius);
+                }
+            }
+        }
+        &:last-child tr:last-child{
+            td:first-child{
+                @include border-bottom-left-radius($stdBorderRadius);
+            }
+        }   
+
+    }
+    tfoot{
+        &:last-child tr:last-child{
+            td{
+                &:first-child{
+                    @include border-bottom-left-radius($stdBorderRadius);
+                }
+                &:last-child{
+                    @include border-bottom-right-radius($stdBorderRadius);
+                }
+            }
+        }   
+
+        + tbody:last-child tr:last-child td{
+            &:first-child, &:last-child{
+                @include border-bottom-left-radius(0px);
+            }
+
+        }
+    }
+
+}
+
+
+.tableBordered caption + thead tr:first-child th,
+.tableBordered caption + tbody tr:first-child th,
+.tableBordered caption + tbody tr:first-child td,
+.tableBordered colgroup + thead tr:first-child th,
+.tableBordered colgroup + tbody tr:first-child th,
+.tableBordered colgroup + tbody tr:first-child td,
+.tableBordered thead:first-child tr:first-child th,
+.tableBordered tbody:first-child tr:first-child th,
+.tableBordered tbody:first-child tr:first-child td {
+    border-top: 0;
+}
+
+.tableBordered caption + thead tr:first-child th:first-child,
+.tableBordered caption + tbody tr:first-child td:first-child,
+.tableBordered colgroup + thead tr:first-child th:first-child,
+.tableBordered colgroup + tbody tr:first-child td:first-child {
+    @include border-top-left-radius($stdBorderRadius);
+}
+.tableBordered caption + thead tr:first-child th:last-child,
+.tableBordered caption + tbody tr:first-child td:last-child,
+.tableBordered colgroup + thead tr:first-child th:last-child,
+.tableBordered colgroup + tbody tr:first-child td:last-child {
+    @include border-top-right-radius($stdBorderRadius);
+}
+
+.tableStriped tbody > tr:nth-child(odd) > td,
+.tableStriped tbody > tr:nth-child(odd) > th,
+.tableStriped tbody > tr.odd {
+    background-color: $baseColour;
+}
+
+.tableHover tbody tr:hover{ 
+    td,th{
+        background-color: lighten($primaryColour, 15%);
+    }
+}
+

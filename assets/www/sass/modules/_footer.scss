@@ -1,0 +1,27 @@
+body > .wrapper{
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto $footerHeight*-1;
+}
+
+
+footer, .footerPush{
+	height: $footerHeight;
+}
+
+footer{
+	left:0px;
+	right:0px;
+	width:100%;
+	display:block;
+	background-color:#F5F5F5; // twitter default colour.
+	@include box-sizing(border-box);
+	padding-top: $standardPadding;
+	padding-bottom: $standardPadding;
+
+	&.stickyFooter{
+		position:fixed;
+		bottom:0px;
+	}
+}

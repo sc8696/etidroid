@@ -1,0 +1,44 @@
+<div id="topicView" class="topics list container body pushLeft">
+
+	<ul class="currentTopicList" id="topicList">
+    	<li ng-repeat="topic in topics" class="topic" data-ng-class="{odd: $index%2===0}">
+    		<a class="row {{topic.newPostLink}}" ng-switch on="topic.newPostLink" data-ng-tap="globals(topic.href, 'posts')" data-ng-click="globals(topic.href, 'posts')">
+    			<div class="nine columns topicName"  >
+    				<div class="topicInner">
+   						<span class="itemTitle">
+    						{{topic.title}}
+    					</span>				
+    				</div>
+    			</div>
+
+
+                <!-- If a topic has no new posts render it like this -->
+    			<div ng-switch-when="undefined" class="three columns topicInfo">
+    				<ul>
+    					<li class="topicPosts">{{topic.messages}} posts</li>
+    					<li class="topicDate">{{topic.date}}</li>
+    					<li class="topicUser">{{topic.user}}</li>
+    				</ul>
+    			</div>
+                <!-- Else render it like this -->
+                <div ng-switch-default class="three columns topicInfo newPosts" data-ng-tap="globals(topic.newPostLink, 'posts', topic.postHash)" data-ng-click="globals(topic.newPostLink, 'posts', topic.postHash)">
+                    <ul>
+                        <li class="topicPosts"><div class="highlightBlue">{{topic.messages}} posts</div></li>
+                        <li class="topicDate">{{topic.date}}</li>
+                        <li class="topicUser">{{topic.user}}</li>
+                    </ul>
+                </div>
+            </a>
+		
+    	</li>                                   
+    </ul>
+
+    <div class="controlActions">
+        <!-- ng repeat here or something -->
+        <a data-ng-repeat="control in controls" class="controlActionButton {{control.text}}" data-ng-tap="globals(control.link)" data-ng-click="globals(control.link)"></a>
+
+    </div>
+
+    <div style="clear:both;"></div>
+    
+</div>

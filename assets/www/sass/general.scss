@@ -1,0 +1,20 @@
+
+@import "compass"; // - imports all of compass from scout app. Only the used commands get compiled into final css.
+
+
+// Automatic spriting example!   
+// @import "../image/icon/*.png";
+// @include all-icon-sprites;
+
+@import "variables/variables";
+// @import "placeholders/placeholders";
+@import "mixins/mixins";
+
+@import "animations/animations";
+// @import "fonts/fonts";
+
+@import "themes/themes";
+
+@import "shared/shared";
+@import "modules/modules";
+@import "specific/specific";
